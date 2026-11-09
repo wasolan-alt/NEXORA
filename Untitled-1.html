@@ -1,0 +1,753 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXORA | Digital Skills Hub</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0b1120;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 6%;
+  background: #111a2c;
+  border-bottom: 1px solid #25324a;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: #8b75ff;
+}
+
+nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #927bff;
+}
+
+.hero {
+  padding: 85px 8%;
+  text-align: center;
+  background: linear-gradient(130deg,#172554,#30145b,#101827);
+}
+
+.hero h1 {
+  font-size: clamp(32px,6vw,55px);
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: #9a83ff;
+}
+
+.hero p {
+  color: #cbd5e1;
+  max-width: 650px;
+  margin: auto;
+  line-height: 1.7;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 24px;
+  margin-top: 25px;
+  border: none;
+  border-radius: 8px;
+  background: #7657ed;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #6242d5;
+}
+
+.container {
+  padding: 55px 7%;
+}
+
+.section-title {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  color: #94a3b8;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.search {
+  width: 100%;
+  padding: 15px;
+  margin: 20px 0 30px;
+  background: #172238;
+  color: white;
+  border: 1px solid #34435e;
+  border-radius: 8px;
+  outline: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(220px,1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #151f32;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #283750;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #8b75ff;
+}
+
+.card .icon {
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #9baac0;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.card a {
+  color: #a18bff;
+  display: inline-block;
+  margin-top: 15px;
+  text-decoration: none;
+}
+
+.tag {
+  color: #a18bff;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.panel {
+  background: #151f32;
+  padding: 25px;
+  border-radius: 12px;
+  margin-top: 20px;
+  border: 1px solid #283750;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 13px;
+  margin: 10px 0;
+  border: 1px solid #34435e;
+  border-radius: 7px;
+  background: #0b1120;
+  color: white;
+}
+
+textarea {
+  min-height: 110px;
+}
+
+.output {
+  background: #080d18;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 8px;
+  min-height: 50px;
+  overflow-wrap: anywhere;
+}
+
+footer {
+  text-align: center;
+  padding: 35px;
+  background: #111a2c;
+  color: #94a3b8;
+  line-height: 2;
+}
+
+.hidden {
+  display: none;
+}
+
+@media(max-width:700px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .hero {
+    padding: 65px 5%;
+  }
+
+  .container {
+    padding: 40px 5%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">NEXORA.</div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#trading">Trading</a>
+    <a href="#design">Design</a>
+    <a href="#coding">Coding</a>
+    <a href="#ai">AI Tools</a>
+    <a href="#business">Business</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <h1>Learn Skills. <span>Build Ideas.</span></h1>
+
+  <p>
+    Welcome to NEXORA, your digital destination
+    for trading education, graphic design,
+    programming, artificial intelligence,
+    business and creativity.
+  </p>
+
+  <a href="#explore" class="btn">
+    Explore Platform
+  </a>
+</section>
+
+<section class="container" id="explore">
+
+  <h2 class="section-title">Explore Our Platform</h2>
+
+  <p class="subtitle">
+    Everything you need to learn, create and
+    develop your digital skills in one place.
+  </p>
+
+  <input
+    type="text"
+    class="search"
+    id="search"
+    placeholder="Search trading, design, coding..."
+    oninput="searchCards()"
+  >
+
+  <div class="grid" id="mainGrid">
+
+    <div class="card">
+      <div class="icon">📈</div>
+      <h3>Trading Academy</h3>
+      <p>Learn forex, cryptocurrency, stocks,
+      technical analysis and risk management.</p>
+      <a href="#trading">Explore Trading →</a>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎨</div>
+      <h3>Graphic Design</h3>
+      <p>Learn logo creation, branding,
+      posters, UI design and colour theory.</p>
+      <a href="#design">Explore Design →</a>
+    </div>
+
+    <div class="card">
+      <div class="icon">💻</div>
+      <h3>Coding Academy</h3>
+      <p>Learn HTML, CSS, JavaScript, Python
+      and website development.</p>
+      <a href="#coding">Start Coding →</a>
+    </div>
+
+    <div class="card">
+      <div class="icon">🤖</div>
+      <h3>AI Creative Studio</h3>
+      <p>Discover AI image, video, writing
+      and productivity tools.</p>
+      <a href="#ai">Explore AI →</a>
+    </div>
+
+    <div class="card">
+      <div class="icon">💼</div>
+      <h3>Business Academy</h3>
+      <p>Learn entrepreneurship, marketing,
+      freelancing and business development.</p>
+      <a href="#business">Explore Business →</a>
+    </div>
+
+    <div class="card">
+      <div class="icon">📚</div>
+      <h3>Learning Centre</h3>
+      <p>Access learning materials, tutorials,
+      guides and practical exercises.</p>
+      <a href="#learning">Start Learning →</a>
+    </div>
+
+    <div class="card">
+      <div class="icon">🏆</div>
+      <h3>My Portfolio</h3>
+      <p>Showcase your designs, coding projects
+      and personal achievements.</p>
+      <a href="#portfolio">View Portfolio →</a>
+    </div>
+
+    <div class="card">
+      <div class="icon">🌍</div>
+      <h3>Community</h3>
+      <p>Connect with other learners,
+      exchange ideas and share projects.</p>
+      <a href="#community">Join Community →</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="container" id="trading">
+  <h2 class="section-title">📈 Trading Academy</h2>
+  <p class="subtitle">
+    Build your understanding of financial markets.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Forex Trading</h3>
+      <p>Currency pairs, pips, spreads,
+      market sessions and trading basics.</p>
+    </div>
+
+    <div class="card">
+      <h3>Crypto Trading</h3>
+      <p>Blockchain, Bitcoin, altcoins
+      and cryptocurrency fundamentals.</p>
+    </div>
+
+    <div class="card">
+      <h3>Technical Analysis</h3>
+      <p>Learn candlesticks, trends,
+      support and resistance.</p>
+    </div>
+
+    <div class="card">
+      <h3>Risk Management</h3>
+      <p>Understand position sizing,
+      stop losses and capital protection.</p>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Trading Risk Calculator</h3>
+    <p class="subtitle">
+      Educational estimate, not a trading signal.
+    </p>
+
+    <label>Account balance ($)</label>
+    <input type="number" id="balance" placeholder="1000">
+
+    <label>Risk percentage (%)</label>
+    <input type="number" id="risk" placeholder="1">
+
+    <button class="btn" onclick="calculateRisk()">
+      Calculate Risk
+    </button>
+
+    <div class="output" id="riskOutput">
+      Your result will appear here.
+    </div>
+  </div>
+</section>
+
+<section class="container" id="design">
+  <h2 class="section-title">🎨 Graphic Design Studio</h2>
+  <p class="subtitle">
+    Develop your creativity and design skills.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Logo Design</h3>
+      <p>Create memorable logos for brands
+      and businesses.</p>
+    </div>
+
+    <div class="card">
+      <h3>Brand Identity</h3>
+      <p>Learn colours, fonts and
+      professional branding.</p>
+    </div>
+
+    <div class="card">
+      <h3>Poster Design</h3>
+      <p>Design flyers, banners,
+      advertisements and posters.</p>
+    </div>
+
+    <div class="card">
+      <h3>UI/UX Design</h3>
+      <p>Learn how to design attractive
+      and user-friendly applications.</p>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Colour Palette Generator</h3>
+    <p class="subtitle">
+      Generate a random colour for your next design.
+    </p>
+
+    <div id="colourBox" class="output">
+      #8B75FF
+    </div>
+
+    <button class="btn" onclick="generateColour()">
+      Generate Colour
+    </button>
+  </div>
+</section>
+
+<section class="container" id="coding">
+  <h2 class="section-title">💻 Coding Academy</h2>
+  <p class="subtitle">
+    Learn to create websites, applications
+    and digital products.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>HTML</h3>
+      <p>Build the structure of websites.</p>
+    </div>
+
+    <div class="card">
+      <h3>CSS</h3>
+      <p>Style websites and create layouts.</p>
+    </div>
+
+    <div class="card">
+      <h3>JavaScript</h3>
+      <p>Add interactive features to websites.</p>
+    </div>
+
+    <div class="card">
+      <h3>Python</h3>
+      <p>Learn programming, automation
+      and data analysis.</p>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Mini HTML Playground</h3>
+    <p class="subtitle">
+      Write HTML and preview your work.
+    </p>
+
+    <textarea id="codeInput"><h1>Hello NEXORA!</h1>
+<p>I am learning to code.</p>
+<button>Click Me</button></textarea>
+
+    <button class="btn" onclick="runCode()">
+      Run Code
+    </button>
+
+    <iframe
+      id="preview"
+      title="HTML preview"
+      sandbox
+      style="width:100%;height:180px;
+      margin-top:15px;background:white;
+      border:0;border-radius:8px;">
+    </iframe>
+  </div>
+</section>
+
+<section class="container" id="ai">
+  <h2 class="section-title">🤖 AI Creative Studio</h2>
+  <p class="subtitle">
+    Discover artificial intelligence
+    and modern creative technology.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>AI Image Creation</h3>
+      <p>Explore tools for creating images
+      from text descriptions.</p>
+    </div>
+
+    <div class="card">
+      <h3>AI Video Creation</h3>
+      <p>Discover tools for animation,
+      storytelling and video production.</p>
+    </div>
+
+    <div class="card">
+      <h3>AI Writing</h3>
+      <p>Create articles, scripts,
+      stories and content ideas.</p>
+    </div>
+
+    <div class="card">
+      <h3>AI Productivity</h3>
+      <p>Discover tools that help
+      simplify everyday tasks.</p>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="business">
+  <h2 class="section-title">💼 Business Academy</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Digital Marketing</h3>
+      <p>Social media, advertising
+      and content marketing.</p>
+    </div>
+
+    <div class="card">
+      <h3>Freelancing</h3>
+      <p>Build skills and find
+      freelance opportunities.</p>
+    </div>
+
+    <div class="card">
+      <h3>Entrepreneurship</h3>
+      <p>Learn business planning,
+      sales and management.</p>
+    </div>
+
+    <div class="card">
+      <h3>E-commerce</h3>
+      <p>Understand online stores
+      and digital selling.</p>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="learning">
+  <h2 class="section-title">📚 Learning Centre</h2>
+  <p class="subtitle">
+    Set goals, practise and grow your skills.
+  </p>
+
+  <div class="panel">
+    <h3>My Learning Goal</h3>
+    <input id="goalInput"
+      placeholder="Example: Learn HTML in 7 days">
+
+    <button class="btn" onclick="saveGoal()">
+      Save Goal
+    </button>
+
+    <div class="output" id="goalOutput">
+      Your goal will appear here.
+    </div>
+  </div>
+</section>
+
+<section class="container" id="portfolio">
+  <h2 class="section-title">🏆 My Portfolio</h2>
+
+  <div class="panel">
+    <h3>Showcase Your Work</h3>
+
+    <input id="projectName"
+      placeholder="Project name">
+
+    <textarea id="projectDescription"
+      placeholder="Describe your project"></textarea>
+
+    <button class="btn" onclick="addProject()">
+      Add Project
+    </button>
+
+    <div id="projectList"></div>
+  </div>
+</section>
+
+<section class="container" id="community">
+  <h2 class="section-title">🌍 Community</h2>
+
+  <div class="panel">
+    <h3>Learn and Grow Together</h3>
+    <p class="subtitle">
+      A future space for learners, designers,
+      traders and developers to connect.
+    </p>
+    <p>
+      Share your work, discuss ideas,
+      ask questions and collaborate.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <h2 class="logo">NEXORA.</h2>
+  <p>Learn Skills. Build Ideas. Create Your Future.</p>
+  <p>© 2026 NEXORA. All rights reserved.</p>
+  <p>Trading education is for learning purposes only.
+  Financial markets involve risk.</p>
+</footer>
+
+<script>
+
+// Search website cards
+function searchCards() {
+  let query = document
+    .getElementById("search")
+    .value.toLowerCase();
+
+  let cards = document.querySelectorAll(
+    "#mainGrid .card"
+  );
+
+  cards.forEach(card => {
+    card.style.display =
+      card.innerText.toLowerCase().includes(query)
+      ? "block" : "none";
+  });
+}
+
+// Trading risk calculator
+function calculateRisk() {
+  let balance = Number(
+    document.getElementById("balance").value
+  );
+
+  let risk = Number(
+    document.getElementById("risk").value
+  );
+
+  let output = document.getElementById("riskOutput");
+
+  if (balance <= 0 || risk <= 0 || risk > 100) {
+    output.innerText = "Enter a valid balance and risk percentage.";
+    return;
+  }
+
+  let amount = balance * risk / 100;
+
+  output.innerText =
+    "Estimated maximum risk: $" + amount.toFixed(2);
+}
+
+// Random colour generator
+function generateColour() {
+  let colour = "#" +
+    Math.floor(Math.random()*16777215)
+    .toString(16).padStart(6,"0");
+
+  let box = document.getElementById("colourBox");
+
+  box.innerText = colour;
+  box.style.background = colour;
+  box.style.color = "white";
+}
+
+// HTML playground
+function runCode() {
+  let code = document.getElementById("codeInput").value;
+
+  document.getElementById("preview").srcdoc = code;
+}
+
+// Save learning goal
+function saveGoal() {
+  let goal = document.getElementById("goalInput").value;
+
+  if (!goal.trim()) {
+    alert("Please enter a learning goal.");
+    return;
+  }
+
+  localStorage.setItem("nexoraGoal", goal);
+
+  document.getElementById("goalOutput").innerText =
+    "Your saved goal: " + goal;
+}
+
+// Add portfolio project
+function addProject() {
+  let name = document.getElementById("projectName").value;
+  let description =
+    document.getElementById("projectDescription").value;
+
+  if (!name.trim() || !description.trim()) {
+    alert("Enter a project name and description.");
+    return;
+  }
+
+  let project = document.createElement("div");
+  project.className = "card";
+
+  let title = document.createElement("h3");
+  title.textContent = name;
+
+  let details = document.createElement("p");
+  details.textContent = description;
+
+  project.append(title, details);
+
+  document.getElementById("projectList").append(project);
+
+  document.getElementById("projectName").value = "";
+  document.getElementById("projectDescription").value = "";
+}
+
+// Restore saved goal
+window.addEventListener("DOMContentLoaded", () => {
+  let saved = localStorage.getItem("nexoraGoal");
+
+  if (saved) {
+    document.getElementById("goalOutput").innerText =
+      "Your saved goal: " + saved;
+  }
+});
+
+</script>
+
+</body>
+</html>
